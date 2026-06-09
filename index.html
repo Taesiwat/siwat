@@ -76,20 +76,56 @@
     <!-- Blog Section -->
     <section id="blog" class="blog-section">
       <div class="section-header">
-        <h2 class="section-title">Featured Essay</h2>
-        <p class="section-subtitle">A comprehensive breakdown of the core systems that govern decisions, markets, and global economies.</p>
+        <h2 class="section-title">Everyday Economics</h2>
+        <p class="section-subtitle">Deep dives on the ten principles that explain our world, based on N. Gregory Mankiw's frameworks.</p>
       </div>
 
-      <div class="blog-container">
-        <!-- Featured Article Card -->
-        <article class="blog-card featured-card">
+      <div class="blog-grid">
+        <!-- Card 1 -->
+        <article class="blog-card">
           <div class="blog-info">
-            <span class="blog-tag">Featured Essay</span>
-            <h3 class="blog-title">Everyday Economics: The Ten Principles That Explain Our World</h3>
+            <span class="blog-tag">Introduction</span>
+            <h3 class="blog-title">Everyday Economics: The Supermarket Miracle</h3>
             <p class="blog-desc">
-              If you walk into a supermarket, you are standing in the middle of a beautiful, complex system. On the shelves, there are fresh apples from New Zealand, rich chocolate from Belgium, and fragrant rice from Thailand. Learn how millions of people making choices under scarcity cooperate automatically, guided by Mankiw's ten economic principles.
+              A beautiful, complex system. Millions of strangers cooperate under constraints to fill our shelves. What is economics really about at its core?
             </p>
-            <button class="btn btn-secondary read-article-btn" id="readFeaturedBtn">Read Article <i class="fa-solid fa-book-open"></i></button>
+            <button class="btn btn-secondary read-article-btn" data-article="intro">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Decisions</span>
+            <h3 class="blog-title">Part 1: Inside the Human Mind</h3>
+            <p class="blog-desc">
+              How people make choices. Weighing trade-offs, calculating opportunity costs, thinking at the margin, and responding to incentives.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-article="decisions">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Interactions</span>
+            <h3 class="blog-title">Part 2: The Social Dance</h3>
+            <p class="blog-desc">
+              How individuals trade and work together. Why trade makes everyone better off, how the invisible hand works, and why government is sometimes needed.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-article="interactions">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Macroeconomy</span>
+            <h3 class="blog-title">Part 3: The Big Picture & Conclusion</h3>
+            <p class="blog-desc">
+              How the whole economy works. Standard of living and productivity, money printing and inflation, and the short-run trade-off between inflation and unemployment.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-article="macro">Read Essay <i class="fa-solid fa-book-open"></i></button>
           </div>
         </article>
       </div>
@@ -176,26 +212,31 @@
     <div class="modal-content">
       <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
       <div class="modal-body">
-        <span class="modal-tag">Featured Essay</span>
-        <h2 class="modal-title">Everyday Economics: The Ten Principles That Explain Our World</h2>
+        <h2 class="modal-title" id="modalTitle">Everyday Economics: The Ten Principles</h2>
         <div class="modal-divider"></div>
         
-        <!-- Tab Controls inside Modal -->
+        <!-- Modal Tabs -->
         <div class="modal-tabs">
-          <button class="modal-tab active" data-tab="part1">1. Decisions</button>
-          <button class="modal-tab" data-tab="part2">2. Interactions</button>
-          <button class="modal-tab" data-tab="part3">3. Macroeconomy</button>
+          <button class="modal-tab" data-tab="intro">Introduction</button>
+          <button class="modal-tab" data-tab="decisions">Decisions</button>
+          <button class="modal-tab" data-tab="interactions">Interactions</button>
+          <button class="modal-tab" data-tab="macro">Macroeconomy</button>
+          <button class="modal-tab" data-tab="conclusion">Conclusion</button>
         </div>
-        
-        <!-- Tab Contents -->
-        <div class="modal-text">
-          <div class="modal-tab-content active" id="part1">
+
+        <div class="modal-text" id="modalText">
+          <!-- Introduction Content -->
+          <div class="modal-tab-content" id="tab-intro">
+            <h3>Everyday Economics: The Supermarket Miracle</h3>
             <p>If you walk into a supermarket in any major city, you are standing in the middle of a beautiful, complex system. On the shelves, there are fresh apples from New Zealand, rich chocolate from Belgium, and fragrant rice from Thailand.</p>
             <p>These items did not arrive there by accident. No government leader ordered a cargo ship to cross the ocean just to fill your dinner plate. Instead, this miracle happens because millions of people, who do not even know each other, are making choices under constraints.</p>
             <p>Many people think <strong>economics</strong> is only about stock markets, interest rates, and dry government budgets. But at its heart, economics is deeply human. It is <strong>the science of how we make choices when things are limited</strong>. Because while our time, money, and resources are limited, our wants and needs are infinite.</p>
             <p>To help us understand this chaotic world, Harvard economist <strong>N. Gregory Mankiw</strong> created the <strong>"Ten Principles of Economics"</strong>. If we look closely at these rules, we can understand why governments succeed or fail, why markets are so powerful, and why we make the choices we do every single day.</p>
-            
-            <h3 class="part-title">Part 1: Inside the Human Mind — How People Make Decisions</h3>
+          </div>
+          
+          <!-- Decisions Content -->
+          <div class="modal-tab-content" id="tab-decisions">
+            <h3>Part 1: Inside the Human Mind — How People Make Decisions</h3>
             <p>To understand a massive global economy, we must start with the smallest unit: ourselves. Economists often assume humans are logical decision-makers. While we are not always perfect, the first four principles show how we weigh our options every day.</p>
             
             <h4>Principle 1: There Is No Such Thing as a Free Lunch (People Face Trade-offs)</h4>
@@ -219,11 +260,12 @@
             <h4>Principle 4: People Respond to Incentives (We React to Rewards and Punishments)</h4>
             <p>An <strong>incentive</strong> is something that induces a person to act—like a reward or a punishment. Because humans naturally want to maximize their happiness and minimize their pain, we react to incentives.</p>
             <p>When the price of oil goes up, car buyers naturally start looking at electric vehicles (EVs) because gasoline has become too expensive. At the same time, car companies start building more EVs because they see a chance to make higher profits.</p>
-            <p>However, policies can sometimes create <strong>unintended consequences</strong> because of incentives. In the 1960s, the US government passed a law requiring all cars to have seatbelts. The goal was to save lives. But economists noticed an interesting shift: because drivers felt safer with seatbelts, they drove faster and more recklessly. The result? Driver deaths stayed about the same, but pedestrian deaths went <em>up</em> because drivers were less careful.</p>
+            <p>Imposing policies can sometimes create <strong>unintended consequences</strong> because of incentives. In the 1960s, the US government passed a law requiring all cars to have seatbelts. The goal was to save lives. But economists noticed an interesting shift: because drivers felt safer with seatbelts, they drove faster and more recklessly. The result? Driver deaths stayed about the same, but pedestrian deaths went <em>up</em> because drivers were less careful.</p>
           </div>
-          
-          <div class="modal-tab-content" id="part2">
-            <h3 class="part-title">Part 2: The Social Dance — How People Interact</h3>
+
+          <!-- Interactions Content -->
+          <div class="modal-tab-content" id="tab-interactions">
+            <h3>Part 2: The Social Dance — How People Interact</h3>
             <p>We do not live alone on an island. Our daily choices affect other people. The next three principles explain how we trade and work together.</p>
 
             <h4>Principle 5: Trade Can Make Everyone Better Off (Trade Is Not a War)</h4>
@@ -250,9 +292,10 @@
             </ol>
             <p>Finally, the market does not guarantee that everyone has food, healthcare, or shelter. Governments step in with social welfare programs to ensure basic human dignity.</p>
           </div>
-          
-          <div class="modal-tab-content" id="part3">
-            <h3 class="part-title">Part 3: The Big Picture — How the Whole Economy Works</h3>
+
+          <!-- Macroeconomy Content -->
+          <div class="modal-tab-content" id="tab-macro">
+            <h3>Part 3: The Big Picture — How the Whole Economy Works</h3>
             <p>The final three principles look at the "macro" level—the forces that move entire nations and shape global history.</p>
 
             <h4>Principle 8: Productivity Determines Wealth (A Nation's Standard of Living)</h4>
@@ -275,7 +318,10 @@
             </ol>
             <p>If the government tries to stop inflation by raising interest rates, people spend less, businesses lay off workers, and <strong>unemployment goes up</strong>.</p>
             <p>This short-run trade-off creates the <strong>Business Cycle</strong>—the natural ups and downs of the economy that policymakers must constantly navigate.</p>
+          </div>
 
+          <!-- Conclusion Content -->
+          <div class="modal-tab-content" id="tab-conclusion">
             <h3>Conclusion: The Lens of Economics</h3>
             <p>These ten principles show us that economics is not just about charts and numbers. It is a set of tools to help us see the invisible threads connecting our world.</p>
             <p>It teaches us that good intentions do not always lead to good results, and that human behavior is guided by the incentives we create. The next time you hold an apple from New Zealand, remember: you are not just holding fruit. You are holding a tiny piece of a beautiful, global system of human cooperation, bound together by the laws of economics.</p>

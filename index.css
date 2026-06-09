@@ -508,15 +508,10 @@ section {
 
 
 /* Blog Section */
-.blog-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.featured-card {
-  max-width: 800px;
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
   width: 100%;
 }
 
@@ -986,5 +981,10 @@ footer {
 
   .section-title {
     font-size: 1.8rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 }
