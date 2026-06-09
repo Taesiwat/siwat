@@ -508,10 +508,16 @@ section {
 
 
 /* Blog Section */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.blog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.featured-card {
+  max-width: 800px;
+  width: 100%;
 }
 
 .blog-card {
@@ -675,6 +681,71 @@ section {
 
 .modal-text li {
   margin-bottom: 0.5rem;
+}
+
+/* Modal Tab Controls */
+.modal-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.modal-tab {
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-tab:hover {
+  color: var(--text-primary);
+}
+
+.modal-tab.active {
+  background: var(--accent-gradient);
+  color: #000;
+  font-weight: 600;
+  border-color: transparent;
+}
+
+.modal-tab-content {
+  display: none;
+}
+
+.modal-tab-content.active {
+  display: block;
+  animation: fade-in 0.25s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-text h4 {
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.part-title {
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 0.5rem;
 }
 
 /* Contact Section */
@@ -884,10 +955,7 @@ footer {
 
 
 
-  .blog-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+
 
   .contact-grid {
     grid-template-columns: 1fr;
