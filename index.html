@@ -32,7 +32,6 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about" class="nav-link active">About</a></li>
-        <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -45,7 +44,6 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#about" class="mobile-nav-link">About</a></li>
-      <li><a href="#blog" class="mobile-nav-link">Blog</a></li>
       <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
     </ul>
   </div>
@@ -67,99 +65,12 @@
           Most people search for answers in raw data. I search for patterns in human behavior. Bridging the gap between economic systems and cognitive philosophy to build a framework for modern decision-making.
         </p>
         <div class="hero-actions">
-          <a href="#blog" class="btn btn-primary btn-lg">Explore the Blog</a>
-          <a href="#contact" class="btn btn-link">Connect Directly <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-primary btn-lg">Connect Directly <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       <!-- Visual card removed -->
     </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-      <div class="section-header">
-        <h2 class="section-title">Selected Articles</h2>
-        <p class="section-subtitle">Deep dives at the intersection of economics, complexity systems, and decision-making.</p>
-      </div>
 
-      <div class="blog-grid">
-        <!-- Article 1: Thailand Macroeconomic Dashboard -->
-        <article class="blog-card">
-          <div class="blog-info">
-            <span class="blog-tag">Macroeconomics</span>
-            <h3 class="blog-title">The Economic Pulse: Tracking Thailand's Macro Indicators</h3>
-            <p class="blog-desc">
-              A data-driven analysis of Thailand's growth, inflation, and interest rate trajectory. Toggle the chart tabs below to interact with the historical models.
-            </p>
-            <div class="dashboard-controls">
-              <button class="db-tab active" data-metric="gdp">GDP Growth</button>
-              <button class="db-tab" data-metric="cpi">Inflation (CPI)</button>
-              <button class="db-tab" data-metric="rate">Policy Rate</button>
-            </div>
-            <div class="metric-stats">
-              <div class="stat-box">
-                <span class="stat-label">Current Value</span>
-                <span class="stat-val" id="currentVal">+2.6%</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-label">Target Range</span>
-                <span class="stat-val" id="targetVal">2.0% - 3.0%</span>
-              </div>
-            </div>
-          </div>
-          <div class="blog-chart-container">
-            <canvas id="macroChart"></canvas>
-          </div>
-        </article>
-
-        <!-- Article 2: Agricultural Price Forecasting -->
-        <article class="blog-card reverse">
-          <div class="blog-chart-container simulation-container">
-            <div class="simulation-chart">
-              <canvas id="forecastChart"></canvas>
-            </div>
-            <div class="simulator-panel">
-              <div class="simulator-title">Simulation Parameters</div>
-              
-              <div class="slider-group">
-                <div class="slider-label">
-                  <span>Global Demand Factor</span>
-                  <span id="demandVal">1.0x</span>
-                </div>
-                <input type="range" id="demandSlider" min="0.5" max="1.5" step="0.1" value="1.0">
-              </div>
-
-              <div class="slider-group">
-                <div class="slider-label">
-                  <span>Climate Yield Impact</span>
-                  <span id="climateVal">0%</span>
-                </div>
-                <input type="range" id="climateSlider" min="-30" max="10" step="5" value="0">
-              </div>
-
-              <div class="slider-group">
-                <div class="slider-label">
-                  <span>Fertilizer Cost Index</span>
-                  <span id="costVal">100</span>
-                </div>
-                <input type="range" id="costSlider" min="70" max="150" step="5" value="100">
-              </div>
-            </div>
-          </div>
-          <div class="blog-info">
-            <span class="blog-tag">Econometrics</span>
-            <h3 class="blog-title">Simulating Commodity Markets: Jasmine Rice Forecasting</h3>
-            <p class="blog-desc">
-              How climate, input costs, and demand factors drive commodity prices. Adjust the econometric parameters inside the simulator below to run a custom 12-month projection.
-            </p>
-            <div class="forecast-result">
-              <div class="result-box">
-                <span class="result-label">12-Month Forecasted Mean Price</span>
-                <span class="result-val" id="predictedPrice">$820 / Ton</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
