@@ -64,18 +64,14 @@ function initBlogModal() {
   const modal = document.getElementById("articleModal");
   const closeBtn = document.getElementById("modalClose");
   const readButtons = document.querySelectorAll(".read-article-btn");
-  const tabs = document.querySelectorAll(".modal-tab");
-  const tabContents = document.querySelectorAll(".modal-tab-content");
 
   if (!modal || !closeBtn) return;
 
-  // Open modal and set active tab
+  // Open modal
   readButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      const targetTab = btn.getAttribute("data-article") || "intro";
       modal.classList.add("show");
       document.body.style.overflow = "hidden"; // Prevent background scroll
-      switchTab(targetTab);
     });
   });
 
@@ -88,30 +84,6 @@ function initBlogModal() {
   closeBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
-  });
-
-  // Tab switching logic
-  function switchTab(tabId) {
-    tabs.forEach(tab => {
-      tab.classList.remove("active");
-      if (tab.getAttribute("data-tab") === tabId) {
-        tab.classList.add("active");
-      }
-    });
-
-    tabContents.forEach(content => {
-      content.classList.remove("active");
-      if (content.getAttribute("id") === `tab-${tabId}`) {
-        content.classList.add("active");
-      }
-    });
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const tabId = tab.getAttribute("data-tab");
-      switchTab(tabId);
-    });
   });
 }
 
