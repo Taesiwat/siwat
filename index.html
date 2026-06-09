@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siwat Teimtad | Economist & Data Analyst</title>
+  <meta name="description" content="Portfolio of Siwat Teimtad, an Economist specializing in macroeconomic modeling, forecasting, and data analysis based in Thailand.">
+  
+  <!-- JetBrains Mono Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Chart.js for premium data visualizations -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!-- Matrix Digital Rain Canvas -->
+  <canvas id="matrixCanvas"></canvas>
+  
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <img src="st_logo.png" alt="Siwat Teimtad Logo" class="logo-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Navigation Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#blog" class="mobile-nav-link">Blog</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section id="about" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-branding">Siwat Teimtad</div>
+        <h1 class="hero-title">
+          Master Your Mind.<br>
+          <span class="gradient-text">Design Your Life.</span>
+        </h1>
+        <div class="hero-divider"></div>
+        <h2 class="hero-subtitle">
+          Economics & Philosophy
+        </h2>
+        <p class="hero-description">
+          Most people search for answers in raw data. I search for patterns in human behavior. Bridging the gap between economic systems and cognitive philosophy to build a framework for modern decision-making.
+        </p>
+        <div class="hero-actions">
+          <a href="#blog" class="btn btn-primary btn-lg">Explore the Blog</a>
+          <a href="#contact" class="btn btn-link">Connect Directly <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      <!-- Visual card removed -->
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+      <div class="section-header">
+        <h2 class="section-title">Selected Articles</h2>
+        <p class="section-subtitle">Deep dives at the intersection of economics, complexity systems, and decision-making.</p>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Article 1: Thailand Macroeconomic Dashboard -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Macroeconomics</span>
+            <h3 class="blog-title">The Economic Pulse: Tracking Thailand's Macro Indicators</h3>
+            <p class="blog-desc">
+              A data-driven analysis of Thailand's growth, inflation, and interest rate trajectory. Toggle the chart tabs below to interact with the historical models.
+            </p>
+            <div class="dashboard-controls">
+              <button class="db-tab active" data-metric="gdp">GDP Growth</button>
+              <button class="db-tab" data-metric="cpi">Inflation (CPI)</button>
+              <button class="db-tab" data-metric="rate">Policy Rate</button>
+            </div>
+            <div class="metric-stats">
+              <div class="stat-box">
+                <span class="stat-label">Current Value</span>
+                <span class="stat-val" id="currentVal">+2.6%</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-label">Target Range</span>
+                <span class="stat-val" id="targetVal">2.0% - 3.0%</span>
+              </div>
+            </div>
+          </div>
+          <div class="blog-chart-container">
+            <canvas id="macroChart"></canvas>
+          </div>
+        </article>
+
+        <!-- Article 2: Agricultural Price Forecasting -->
+        <article class="blog-card reverse">
+          <div class="blog-chart-container simulation-container">
+            <div class="simulation-chart">
+              <canvas id="forecastChart"></canvas>
+            </div>
+            <div class="simulator-panel">
+              <div class="simulator-title">Simulation Parameters</div>
+              
+              <div class="slider-group">
+                <div class="slider-label">
+                  <span>Global Demand Factor</span>
+                  <span id="demandVal">1.0x</span>
+                </div>
+                <input type="range" id="demandSlider" min="0.5" max="1.5" step="0.1" value="1.0">
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-label">
+                  <span>Climate Yield Impact</span>
+                  <span id="climateVal">0%</span>
+                </div>
+                <input type="range" id="climateSlider" min="-30" max="10" step="5" value="0">
+              </div>
+
+              <div class="slider-group">
+                <div class="slider-label">
+                  <span>Fertilizer Cost Index</span>
+                  <span id="costVal">100</span>
+                </div>
+                <input type="range" id="costSlider" min="70" max="150" step="5" value="100">
+              </div>
+            </div>
+          </div>
+          <div class="blog-info">
+            <span class="blog-tag">Econometrics</span>
+            <h3 class="blog-title">Simulating Commodity Markets: Jasmine Rice Forecasting</h3>
+            <p class="blog-desc">
+              How climate, input costs, and demand factors drive commodity prices. Adjust the econometric parameters inside the simulator below to run a custom 12-month projection.
+            </p>
+            <div class="forecast-result">
+              <div class="result-box">
+                <span class="result-label">12-Month Forecasted Mean Price</span>
+                <span class="result-val" id="predictedPrice">$820 / Ton</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 class="section-title">Connect With Me</h2>
+          <p class="contact-subtitle">
+            Interested in collaboration, research partnerships, or consulting? Feel free to reach out.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-text">
+                <span class="label">Email</span>
+                <a href="mailto:siwat.teimtad@gmail.com">siwat.teimtad@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-text">
+                <span class="label">GitHub</span>
+                <a href="https://github.com" target="_blank">github.com/siwat-t</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-brands fa-linkedin"></i></div>
+              <div class="contact-text">
+                <span class="label">LinkedIn</span>
+                <a href="https://linkedin.com" target="_blank">linkedin.com/in/siwat-teimtad</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-text">
+                <span class="label">Location</span>
+                <span>Bangkok, Thailand</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="5" required placeholder="Your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          
+          <!-- Success Overlay (Hidden by default) -->
+          <div class="success-message" id="successMessage">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out, Siwat will get back to you shortly.</p>
+            <button class="btn btn-secondary btn-sm" id="closeSuccessBtn">Close</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <p>&copy; 2026 Siwat Teimtad. All rights reserved.</p>
+      <p class="footer-subtext">Made with <span class="heart">❤️</span> in Bangkok, Thailand. Supported by my loving wife.</p>
+    </div>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
