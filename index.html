@@ -32,6 +32,7 @@
       </div>
       <ul class="nav-links">
         <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#blog" class="nav-link">Blog</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
@@ -44,6 +45,7 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="#about" class="mobile-nav-link">About</a></li>
+      <li><a href="#blog" class="mobile-nav-link">Blog</a></li>
       <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
     </ul>
   </div>
@@ -65,12 +67,57 @@
           Most people search for answers in raw data. I search for patterns in human behavior. Bridging the gap between economic systems and cognitive philosophy to build a framework for modern decision-making.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary btn-lg">Connect Directly <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#blog" class="btn btn-primary btn-lg">Explore the Blog</a>
+          <a href="#contact" class="btn btn-link">Connect Directly <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       <!-- Visual card removed -->
     </section>
 
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+      <div class="section-header">
+        <h2 class="section-title">Everyday Economics</h2>
+        <p class="section-subtitle">Deep dives on the ten principles that explain our world, based on N. Gregory Mankiw's frameworks.</p>
+      </div>
 
+      <div class="blog-grid">
+        <!-- Card 1 -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Decisions</span>
+            <h3 class="blog-title">Part 1: Inside the Human Mind</h3>
+            <p class="blog-desc">
+              How people make choices. Weighing trade-offs, calculating opportunity costs, thinking at the margin, and responding to incentives.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-article="article1">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Interactions</span>
+            <h3 class="blog-title">Part 2: The Social Dance</h3>
+            <p class="blog-desc">
+              How individuals trade and work together. Why trade makes everyone better off, how the invisible hand works, and why government is sometimes needed.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-article="article2">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="blog-card">
+          <div class="blog-info">
+            <span class="blog-tag">Macroeconomy</span>
+            <h3 class="blog-title">Part 3: The Big Picture</h3>
+            <p class="blog-desc">
+              How the whole economy works. Standard of living and productivity, money printing and inflation, and the short-run trade-off.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-article="article3">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+      </div>
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
@@ -147,6 +194,20 @@
       <p class="footer-subtext">Made with <span class="heart">❤️</span> in Bangkok, Thailand. Supported by my loving wife.</p>
     </div>
   </footer>
+
+  <!-- Article Reader Modal -->
+  <div class="modal-overlay" id="articleModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <h2 class="modal-title" id="modalTitle">Article Title</h2>
+        <div class="modal-divider"></div>
+        <div class="modal-text" id="modalText">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Custom JS -->
   <script src="script.js"></script>
