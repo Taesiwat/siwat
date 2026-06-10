@@ -1,5 +1,7 @@
 # **Everyday Economics: The Ten Principles That Explain Our World**
 
+*Created: June 9, 2026*
+
 If you walk into a supermarket in any major city, you are standing in the middle of a beautiful, complex system. On the shelves, there are fresh apples from New Zealand, rich chocolate from Belgium, and fragrant rice from Thailand.
 
 These items did not arrive there by accident. No government leader ordered a cargo ship to cross the ocean just to fill your dinner plate. Instead, this miracle happens because millions of people, who do not even know each other, are making choices under constraints.

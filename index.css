@@ -510,7 +510,8 @@ section {
 /* Blog Section */
 .blog-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2.5rem;
   align-items: center;
   width: 100%;
 }
@@ -544,15 +545,25 @@ section {
   height: 100%;
 }
 
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .blog-tag {
   display: inline-block;
-  align-self: flex-start;
   font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--accent-cyan);
-  margin-bottom: 1rem;
   letter-spacing: 1.5px;
+}
+
+.blog-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
 }
 
 .blog-title {
@@ -649,6 +660,13 @@ section {
   line-height: 1.2;
 }
 
+.modal-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
 .modal-divider {
   height: 2px;
   background: var(--accent-gradient);
@@ -668,10 +686,37 @@ section {
 
 .modal-text h3 {
   color: var(--text-primary);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
+}
+
+.modal-text h4 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.modal-text blockquote {
+  border-left: 3px solid var(--accent-emerald);
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.modal-text pre.mermaid {
+  background: #040405;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
 }
 
 .modal-text ul, .modal-text ol {

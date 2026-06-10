@@ -61,29 +61,39 @@ function initNavigation() {
    2. ARTICLE READER MODAL (BLOG)
    ========================================================================== */
 function initBlogModal() {
-  const modal = document.getElementById("articleModal");
-  const closeBtn = document.getElementById("modalClose");
   const readButtons = document.querySelectorAll(".read-article-btn");
 
-  if (!modal || !closeBtn) return;
-
-  // Open modal
   readButtons.forEach(btn => {
+    const targetId = btn.getAttribute("data-target") || "articleModal";
+    const modal = document.getElementById(targetId);
+    if (!modal) return;
+
+    const closeBtn = modal.querySelector(".modal-close");
+
+    // Open modal
     btn.addEventListener("click", () => {
       modal.classList.add("show");
       document.body.style.overflow = "hidden"; // Prevent background scroll
+      
+      // If mermaid is defined, request a layout refresh for the modal's diagrams
+      if (typeof mermaid !== 'undefined') {
+        mermaid.init(undefined, modal.querySelectorAll(".mermaid"));
+      }
     });
-  });
 
-  // Close modal
-  function closeModal() {
-    modal.classList.remove("show");
-    document.body.style.overflow = ""; // Restore scroll
-  }
+    // Close modal
+    const closeModal = () => {
+      modal.classList.remove("show");
+      document.body.style.overflow = ""; // Restore scroll
+    };
 
-  closeBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) closeModal();
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeModal);
+    }
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
   });
 }
 

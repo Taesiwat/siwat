@@ -16,6 +16,27 @@
   
   <!-- Chart.js for premium data visualizations -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Mermaid for text-based diagrams -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        securityLevel: 'loose',
+        themeVariables: {
+          background: '#040405',
+          primaryColor: '#0f3460',
+          primaryTextColor: '#f1f5f9',
+          lineColor: '#06b6d4',
+          actorLineColor: '#10b981',
+          signalColor: '#06b6d4',
+          signalLineColor: '#06b6d4'
+        }
+      });
+    });
+  </script>
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="index.css">
@@ -76,20 +97,38 @@
     <!-- Blog Section -->
     <section id="blog" class="blog-section">
       <div class="section-header">
-        <h2 class="section-title">Everyday Economics</h2>
-        <p class="section-subtitle">A deep dive on human behavior, choices under constraints, and the invisible threads that bind our global civilization together.</p>
+        <h2 class="section-title">Deep Dives & Essays</h2>
+        <p class="section-subtitle">Bridging the gap between economic systems, human behavior, and cognitive philosophy to build frameworks for modern decision-making.</p>
       </div>
 
       <div class="blog-container">
-        <!-- Featured Article Card -->
+        <!-- Featured Article Card 1 -->
         <article class="blog-card featured-card">
           <div class="blog-info">
-            <span class="blog-tag">Essay</span>
+            <div class="blog-meta">
+              <span class="blog-tag">Economics</span>
+              <span class="blog-date">June 9, 2026</span>
+            </div>
             <h3 class="blog-title">Everyday Economics: The Ten Principles That Explain Our World</h3>
             <p class="blog-desc">
               Economics isn't just about stocks, numbers, and budgets. At its heart, it is the study of human behavior, choices under constraints, and the invisible threads that bind our global civilization together.
             </p>
-            <button class="btn btn-secondary read-article-btn">Read Essay <i class="fa-solid fa-book-open"></i></button>
+            <button class="btn btn-secondary read-article-btn" data-target="economicsModal">Read Essay <i class="fa-solid fa-book-open"></i></button>
+          </div>
+        </article>
+
+        <!-- Featured Article Card 2 -->
+        <article class="blog-card featured-card">
+          <div class="blog-info">
+            <div class="blog-meta">
+              <span class="blog-tag">Cognition & Learning</span>
+              <span class="blog-date">June 10, 2026</span>
+            </div>
+            <h3 class="blog-title">Learning How to Learn: Unlock Your Brain's Hidden Potential</h3>
+            <p class="blog-desc">
+              Discover the biological mechanics of focused vs. diffuse modes, working memory, neuroplasticity, and how slow hikers can outpace fast race cars.
+            </p>
+            <button class="btn btn-secondary read-article-btn" data-target="learningModal">Read Essay <i class="fa-solid fa-book-open"></i></button>
           </div>
         </article>
       </div>
@@ -171,14 +210,15 @@
     </div>
   </footer>
 
-  <!-- Article Reader Modal -->
-  <div class="modal-overlay" id="articleModal">
+  <!-- Article Reader Modal 1: Economics -->
+  <div class="modal-overlay" id="economicsModal">
     <div class="modal-content">
-      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <button class="modal-close" aria-label="Close modal">&times;</button>
       <div class="modal-body">
-        <h2 class="modal-title" id="modalTitle">Everyday Economics: The Ten Principles That Explain Our World</h2>
+        <h2 class="modal-title">Everyday Economics: The Ten Principles That Explain Our World</h2>
+        <div class="modal-meta">Created: June 9, 2026</div>
         <div class="modal-divider"></div>
-        <div class="modal-text" id="modalText">
+        <div class="modal-text">
           <p>If you walk into a supermarket in any major city, you are standing in the middle of a beautiful, complex system. On the shelves, there are fresh apples from New Zealand, rich chocolate from Belgium, and fragrant rice from Thailand.</p>
           <p>These items did not arrive there by accident. No government leader ordered a cargo ship to cross the ocean just to fill your dinner plate. Instead, this miracle happens because millions of people, who do not even know each other, are making choices under constraints.</p>
           <p>Many people think <strong>economics</strong> is only about stock markets, interest rates, and dry government budgets. But at its heart, economics is deeply human. It is <strong>the science of how we make choices when things are limited</strong>. Because while our time, money, and resources are limited, our wants and needs are infinite.</p>
@@ -271,6 +311,192 @@
               Mankiw, N. G. (2020). <em>Principles of microeconomics</em> (9th ed.). Cengage Learning.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Reader Modal 2: Learning How to Learn -->
+  <div class="modal-overlay" id="learningModal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body">
+        <h2 class="modal-title">Learning How to Learn: Unlock Your Brain's Hidden Potential</h2>
+        <div class="modal-meta">Created: June 10, 2026</div>
+        <div class="modal-divider"></div>
+        <div class="modal-text">
+          <p>Many of us have been tricked into believing that being a "genius" is a talent we are born with. We look at smart students and think their brains are like <strong>Formula 1 race cars</strong> that zoom past the finish line effortlessly, while slow learners just have to accept their bad luck.</p>
+          <p>But what if the science of learning tells a completely different story? In reality, slow learners—who possess what we call a <strong>"Hiker Brain"</strong>—actually have hidden, powerful advantages over the fast race cars. The secret to becoming a super learner is not about being born with a smarter brain. It is about understanding the mechanical workings of your brain and knowing how to use them correctly!</p>
+          <p>Whether you are a 10-year-old struggling with basic math, a college student cramming for a tough engineering exam, a 40-year-old office worker wanting to master a new language, or a retiree looking for a cognitive challenge—this guide is the key to turning you into a <strong>Lifelong Learner</strong>.</p>
+
+          <h3>Part 1: The Building Blocks of Learning</h3>
+          <p>When we learn new things, our brain physically changes its structure. This incredible process is called <strong>Neuroplasticity (Brain Flexibility)</strong>. For decades, scientists believed the brain was fixed after childhood. Now we know that our brains can build new connections and change their shape throughout our entire lives.</p>
+          <p>At the center of this transformation are tiny cells in our brain called <strong>Neurons</strong>. Think of neurons as the physical building blocks of learning.</p>
+          <ul>
+            <li>There are <strong>86 billion neurons</strong> in your brain—about the same as the number of stars in the Milky Way!</li>
+            <li>They are so microscopic that if you line up 10 neurons, they are only as thick as a single strand of hair.</li>
+          </ul>
+
+          <h4>The Tiny "Alien" in Your Brain</h4>
+          <p>To understand how you learn, it helps to visualize each neuron as a tiny alien creature with a very specific anatomy:</p>
+          <ol>
+            <li><strong>The Nucleus:</strong> The alien's "eye" in the middle of its body.</li>
+            <li><strong>The Axon:</strong> The alien's single "long arm" used to send signals out.</li>
+            <li><strong>Dendrites:</strong> The alien's "legs" used to receive incoming signals.</li>
+            <li><strong>Dendritic Spines:</strong> Tiny bumps on the legs that look like "toes." These toes are where learning begins!</li>
+          </ol>
+
+          <h4>How Brains Talk: Synapses and Brain-Links</h4>
+          <p>When we start learning, these tiny aliens start communicating.</p>
+          <p>The sending alien stretches its long arm (Axon) close to the toes (Dendritic Spines) of the receiving alien. However, they do not actually touch. There is a tiny gap between them called a <strong>Synapse</strong>. To send a message, the sending alien shoots a chemical-electric spark across this gap. This flow of electricity is what we perceive as a "thought."</p>
+          <p>In brain science, there is a golden rule:</p>
+          <blockquote>"Neurons that fire together, wire together."</blockquote>
+          <p>When you practice something over and over, the tiny aliens that spark each other become close friends. They build a strong, physical connection called <strong>Brain-links</strong>. The more you practice, the stronger, thicker, and faster those sparks become. More neurons join the conversation, creating a large, robust network in your brain. This physical wiring is what turns a new, clunky piece of information into a lasting, automatic skill.</p>
+          <p><strong>The Forest Path Analogy:</strong> Imagine your thoughts are like a little mouse running through a thick, wild forest. At first, the grass is tall and dense, and it is very hard for the mouse to run through. But the more the mouse runs along the exact same route (through practice and review), the flatter the grass gets. The path becomes wider and clearer. Soon, the forest path is well-defined, and the mouse can sprint through it easily and quickly!</p>
+
+          <h3>Part 2: Focused Mode vs. Diffuse Mode</h3>
+          <p>Our brain works in two completely different ways, and both are essential for deep learning. To understand them, imagine your brain as a classic Pinball Machine.</p>
+
+          <h4>1. Focused Mode</h4>
+          <p>This mode occurs when you pay close, undivided attention to something. Examples include solving a specific algebra problem, analyzing a sentence structure, or practicing a piano scale.</p>
+          <p>In this mode, your pinball machine has rubber bumpers placed very close together. When you launch your "thought ball," it bounces rapidly in a very small, tight area. The ball travels along the familiar paths—the Brain-links—you have already established. This mode is excellent for loading new information into your mind and laying down the first pathways. Its motto is: <em>"Keep your eyes on the prize!"</em></p>
+
+          <h4>2. Diffuse Mode (Relaxed Mode)</h4>
+          <p>This mode occurs when your mind is relaxed and free to wander. Examples include daydreaming, taking a walk, taking a warm shower, drawing, or sleeping.</p>
+          <p>In this mode, the pinball bumpers are spaced very far apart. When you stop worrying about the problem and release your focus, your "thought ball" can travel widely across your entire brain, hitting new and unfamiliar bumpers. This helps your brain connect distant ideas and sparks creativity. In this mode, your brain is secretly working on hard problems in the background without your conscious awareness! Its motto is: <em>"Keep your eyes on the fly!"</em> (Let your mind drift).</p>
+
+          <h4>How to Switch Between Modes</h4>
+          <p>The golden rule is: <strong>Your brain can only use ONE mode at a time.</strong> You cannot be in both modes simultaneously. High-efficiency learning happens when you learn to alternate (switch back and forth) between the two.</p>
+          <ol>
+            <li><strong>Always start in Focused Mode:</strong> When you face a hard problem, focus on it intensely first to prepare your brain and draw the basic path on your pinball machine.</li>
+            <li><strong>If you get stuck, do not force it:</strong> If you try to solve a problem for 10-15 minutes and get frustrated, your thought ball is trapped in a tight corner of the Focused Mode. Forcing yourself to keep thinking will not help.</li>
+            <li><strong>Let go of the pinball controls:</strong> Stop, take a break, or do something else. This lets the Diffuse Mode take over. Your thought ball drops down into the wide, hidden pinball machine below.</li>
+            <li><strong>Let your brain work while you rest:</strong> While you are walking, showering, or resting, the thought ball travels freely and finds new solutions. This is why great ideas suddenly pop into your head when you least expect it!</li>
+          </ol>
+          <p><em>Summary:</em> <strong>Focused Mode</strong> is for loading information and building initial paths. <strong>Diffuse Mode</strong> is for seeing the big picture, connecting distant concepts, and solving complex problems.</p>
+
+          <h3>Part 3: Working Memory vs. Long-Term Memory</h3>
+          <p>Our brain has two memory systems that work together to turn new information into lasting expertise:</p>
+
+          <h4>1. Working Memory (The Backpack)</h4>
+          <p>Working Memory is what you use to hold thoughts you are actively thinking about <em>right now</em>. Think of it like a backpack you carry around. It is super easy to reach, but it is very small and cannot hold much.</p>
+          <p>Inside this backpack lives a <strong>Busy Octopus</strong>. This octopus uses its tentacles to hold onto your current thoughts. But this octopus is special:</p>
+          <ul>
+            <li>It has only <strong>4 tentacles</strong>, meaning it can only hold <strong>4 pieces of information</strong> at a time.</li>
+            <li>Its tentacles are very slippery. The electric grip only lasts for <strong>10-15 seconds</strong>.</li>
+            <li>If you do not pay attention or review, the information slips away. This is why if someone tells you their name and you do not repeat it immediately, you will forget it a minute later!</li>
+          </ul>
+
+          <h4>2. Long-Term Memory (The Hallway Locker)</h4>
+          <p>If you want to remember information for longer than 15 seconds, it must be sent to your Long-Term Memory. This is like a giant locker in a school hallway. It looks small from the outside, but it is like a magic box with unlimited storage space inside.</p>
+          <p>Your locker stores information in two different ways: <strong>Pictures</strong> and <strong>Facts</strong>.</p>
+          <ul>
+            <li><strong>Pictures:</strong> Humans evolved to be amazing at remembering pictures and places. If you can visualize an idea (like your kitchen table or the road to school), the octopus has an easy job. It just takes the picture and tapes it onto the locker wall.</li>
+            <li><strong>Facts (Abstract Information):</strong> This includes numbers, years in history, foreign words, or math formulas. The brain views these as <strong>"Toothpaste."</strong> The octopus cannot tape toothpaste to the wall. Instead, it has to squeeze and force the toothpaste back into a tiny tube. This is very hard and messy!
+              <br><em>The Fix:</em> Never try to force toothpaste back into the tube (rote memorization). Instead, <strong>turn abstract facts into pictures</strong>. If you imagine a funny, weird, or moving picture, your brain will remember it instantly!
+            </li>
+          </ul>
+
+          <h4>How Information Moves from Your Backpack to Your Locker (The 4 Phases)</h4>
+          <p>Learning is the process of moving concepts from the temporary backpack into the permanent locker. This happens in four distinct phases:</p>
+
+          <ul>
+            <li><strong>Phase 1: Starting to Learn</strong>
+              <br>When you try to understand a new, hard concept, your octopus has to use all 4 of its tentacles to hold different pieces of confusing information. It takes a lot of effort to connect them. It feels difficult and confusing because your Brain-links are still very weak.
+            </li>
+            <li><strong>Phase 2: Creating and Practicing</strong>
+              <br>Just understanding is not enough. You must <strong>practice</strong>. As you practice and review, the dendritic spines (alien toes) grow and tighten their connections (synapses). This creates a neat chain of <strong>Brain-links</strong> that are sent to your locker.
+            </li>
+            <li><strong>Phase 3: Reaching Mastery</strong>
+              <br>This is where the magic happens. Once the Brain-links are strong and stored in your locker, the task becomes easy. Now, the octopus does not need all 4 tentacles to process the idea. It just uses <strong>one tentacle</strong> to reach into the locker, zap the Brain-link, and pull the whole chain of knowledge back into your working memory instantly!
+            </li>
+            <li><strong>Phase 4: The Power of an Expert</strong>
+              <br>Because the octopus only uses 1 tentacle to pull up a mastered skill, it has <strong>3 tentacles free</strong> to do other things! For example, when you are a skilled driver, you can easily drive (1 tentacle) while listening to music or thinking about other things (free tentacles). Experts in chess, math, or history have thousands of Brain-links in their lockers. They use their free tentacles to pull out and connect multiple chains at once!
+            </li>
+          </ul>
+
+          <h3>Part 4: The Magic of Sleep</h3>
+          <p>Many students think pulling an "all-nighter" to study is smart. In reality, sleep is the most important key to changing temporary notes into permanent memories!</p>
+          <p>Sleep helps us learn through <strong>5 major mechanisms</strong>:</p>
+          <ol>
+            <li><strong>Upgrading Brain Software (Growing Alien Toes):</strong> While you study during the day, tiny bumps appear on your neurons' legs. But these bumps only grow into complete <strong>Dendritic Spines (Alien Toes)</strong> when you are <strong>asleep</strong>! The physical connections of learning are finished while you sleep, not while you are awake.</li>
+            <li><strong>Replaying the Day's Lessons:</strong> While you sleep, your brain is actually practicing. The tiny aliens in your brain replay the lessons by shooting electricity through the same pathways over and over, making your Brain-links much stronger.</li>
+            <li><strong>Escaping the Synapse Janitors:</strong> Your brain knows if you paid attention. If you did not focus, no bumps grow. Also, if you do not review or sleep, a team of <strong>Synapse Janitors</strong> (like tiny vacuum cleaners) will sweep away and destroy unused connections.</li>
+            <li><strong>Washing Away Brain Toxins:</strong> When you are awake, your brain active-firing creates toxic waste. The longer you stay awake, the more toxins pile up. But when you fall into a deep sleep, your brain cells shrink, creating wider gaps. A special fluid flows in and washes away all the toxins (like rebooting a computer). If you do not sleep, these toxins block new brain cells and synapses from growing, and your learning breaks down.</li>
+            <li><strong>Diffuse Mode Magic and Dreams:</strong> Sleep is the ultimate Diffuse Mode. Your thoughts wander freely. If you review a hard topic right before bed, you are much more likely to dream about it. Dreaming about your studies helps stick the information deep into your brain!</li>
+          </ol>
+          <p><em>Summary:</em> One hour of studying with a fresh, well-rested brain is worth more than three hours of forcing a tired, sleep-deprived brain to work.</p>
+
+          <h3>Part 5: Exercise — The Brain's Super Fertilizer</h3>
+          <p>Exercise is not just for your body; it is one of the best ways to change your brain structure on a cellular level!</p>
+          <ol>
+            <li><strong>BDNF (Super Fertilizer for Brain Cells):</strong> When you exercise, your brain releases a chemical called <strong>BDNF</strong>. This is like "super plant food" for your brain. BDNF keeps your neurons healthy and encourages dendritic spines (alien toes) to grow bigger and stronger. This makes your Brain-links highly secure.</li>
+            <li><strong>Growing New Neurons in the Hippocampus:</strong> The <strong>Hippocampus</strong> (a brain part shaped like a seahorse) is your memory center. It is like a basketball team that gets new players (new neurons) every day. Usually, these new cells die quickly if you do not learn new things. But <strong>exercise</strong> keeps these new cells alive and strong, giving you more memory space.</li>
+            <li><strong>Releasing Creativity Chemicals:</strong> Exercise boosts chemicals like <strong>Serotonin</strong> and <strong>Dopamine</strong>. These chemicals make you feel good, improve your focus, and help your brain connect old memories with new ideas.</li>
+            <li><strong>The Perfect Gateway to Diffuse Mode:</strong> When you walk, swim, or play sports, your brain naturally switches to Diffuse Mode. Your thought ball bounces freely, allowing your brain to quietly solve hard problems in the background.</li>
+          </ol>
+
+          <h3>Part 6: How to Put These Tricks into Action</h3>
+          <p>Here are <strong>7 practical rules</strong> to apply these brain mechanics to your daily life:</p>
+
+          <h4>1. Beat the Pain of Starting with the "Pomodoro Technique"</h4>
+          <p>When you think about doing something you do not want to do (like homework), your brain's pain center—the <strong>Insular Cortex</strong>—lights up. You feel physical discomfort, so your brain tries to protect you by making you procrastinate (switching to social media).</p>
+          <p>But here is the secret: <strong>The pain disappears after you start working for a few minutes.</strong></p>
+          <ul>
+            <li><strong>How to do it:</strong> Set a timer for <strong>25 minutes</strong>. Turn off all distractions (put your phone in another room). Let your busy octopus focus fully.</li>
+            <li><strong>The Reward:</strong> Once the timer rings, give yourself a <strong>5-10 minute reward</strong> (walk, listen to music, chat). This reward is crucial because it lets your brain drop into Diffuse Mode to process the information.</li>
+            <li><em>Tip:</em> Focus on the <em>process</em> (just working for 25 minutes), not the <em>product</em> (finishing the whole task).</li>
+          </ul>
+
+          <h4>2. Grow Your Brain with "Active Recall"</h4>
+          <p>Reading a book over and over or highlighting lines of text is a trap. It makes you feel like you know the material (an illusion of competence), but the information is still just on the paper.</p>
+          <ul>
+            <li><strong>How to do it:</strong> After reading a page, look away and try to <strong>pull the key ideas out of your own head</strong> (Active Recall). Explain it out loud, write down key points from memory, or explain it to a toy or a friend. This action is what forces the alien toes to grow!</li>
+          </ul>
+
+          <h4>3. Build a Strong Knowledge Wall with "Spaced Repetition"</h4>
+          <p>When you learn something new, the synaptic connections are weak. Cramming all your study into one night before an exam is like building a brick wall without letting the mortar dry. The wall will collapse into a messy pile of bricks.</p>
+          <ul>
+            <li><strong>How to do it:</strong> Space out your review sessions over several days. Study a little bit every day, allowing sleep to act as the mortar that glues your synapses together.</li>
+          </ul>
+
+          <h4>4. Use "Deliberate Practice" and "Interleaving"</h4>
+          <p>It feels good to practice things we are already good at, but that is "lazy learning" and does not grow new connections.</p>
+          <ul>
+            <li><strong>Deliberate Practice:</strong> Focus on the hardest parts of the topic first when your brain is fresh.</li>
+            <li><strong>Interleaving (Mixing Topics):</strong> Do not just practice one type of problem. Mix up questions from different chapters. This teaches your brain <em>when</em> to use a tool, not just <em>how</em> to use it. If you only practice using a hammer, you will try to hammer a screw because you do not know the difference!</li>
+          </ul>
+
+          <h4>5. Turn Facts into Pictures and Use Metaphors</h4>
+          <p>Remember, the brain hates "toothpaste" (abstract facts) but loves "pictures."</p>
+          <ul>
+            <li><strong>How to do it:</strong> Turn abstract concepts into funny, wild, or moving pictures in your head.</li>
+            <li><strong>Memory Palace:</strong> Place these wild pictures in different rooms of a familiar place (like your house). Use your brain's natural talent for spatial memory to recall them later.</li>
+            <li><strong>Metaphors (Analogies):</strong> Compare new concepts to things you already know (like comparing a neuron to an alien, or working memory to a backpack).</li>
+          </ul>
+
+          <h4>6. Switch Modes with "Hard Start - Easy Second"</h4>
+          <p>During an exam or when doing homework, start by looking for the <strong>hardest question</strong> first. Begin working on it for a few minutes until you get stuck.</p>
+          <p>As soon as you get stuck, <strong>switch to an easy question</strong>. By letting go of the hard question, your brain instantly drops into Diffuse Mode. Your background brain will start working on the hard question while you easily solve the simple one!</p>
+
+          <h4>7. Wash and Fertilize Your Brain Daily</h4>
+          <p>Make sure you sleep at least 8 hours a day to wash away toxins and grow connections, and exercise regularly to feed your brain with BDNF "fertilizer."</p>
+
+          <h3>Conclusion</h3>
+          <p>We often give up, believing that smartness is a birthright and fear limits our potential. But brain science proves this is wrong.</p>
+          <p>You were born with the most powerful technology in the universe: <strong>Your Brain</strong>.</p>
+          <p>Your brain is not a fixed hard drive with limited space. It is like <strong>living clay</strong>. Every time you learn, it reshapes itself. You can build, expand, and change your brain pathways throughout your entire life. Smartness is not born; it is made.</p>
+          <p>Being a slow learner is not a weakness. Fast learners are like <strong>race cars</strong>—they get to the finish line quickly, but they often miss the beautiful details along the way. Slow learners are like <strong>hikers</strong>—they walk slowly, but they absorb the details, connect different ideas, and understand deep complexities that fast thinkers completely miss.</p>
+          <p>Stop looking at learning as a forced chore. Realize how lucky you are to have this incredible privilege to learn. Leaving this amazing brain asleep is like throwing away the most valuable gift you have ever received.</p>
+          <p>The ancient Romans had a famous phrase: <strong>"FORTES FORTUNA ADIUVAT"</strong> which means <strong>"Fortune favors the brave."</strong> In learning, we say: <strong>"Lady Luck favors the one who tries."</strong></p>
+          <p>Success does not fall from the sky. Your brain will not build connections if you just sit and wait. It only happens to those who are brave:</p>
+          <ul>
+            <li>Brave enough to start.</li>
+            <li>Brave enough to beat laziness.</li>
+            <li>Brave enough to face what they do not know.</li>
+            <li>Brave enough to do the hard things.</li>
+          </ul>
+          <p>Every single day, your brain is changing its shape. The question is not how smart you are right now. The question is: <strong>Are you brave enough today to build your brain into its absolute best version?</strong></p>
         </div>
       </div>
     </div>
