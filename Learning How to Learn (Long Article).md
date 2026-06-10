@@ -225,3 +225,9 @@ Success does not fall from the sky. Your brain will not build connections if you
 Every single day, your brain is changing its shape. The question is not how smart you are right now. The question is: 
 
 **Are you brave enough today to build your brain into its absolute best version?**
+
+---
+
+## References
+
+* Oakley, B., & Sejnowski, T. (2018). *Learning how to learn: How to succeed in school without spending all your time studying; A guide for kids and teens*. TarcherPerigee.
