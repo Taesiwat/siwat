@@ -116,8 +116,7 @@ function initContactForm() {
     
     const newConnection = {
       email: email,
-      location: location,
-      timestamp: new Date().toISOString()
+      location: location
     };
     
     try {
