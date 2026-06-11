@@ -101,9 +101,6 @@ function initBlogModal() {
 
 
 
-/* ==========================================================================
-   4. CONTACT FORM AND INTERACTIVE SUCCESS LAYOUT
-   ========================================================================== */
 function initContactForm() {
   const form = document.getElementById("contactForm");
   const successOverlay = document.getElementById("successMessage");
@@ -113,6 +110,23 @@ function initContactForm() {
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
+    
+    const email = document.getElementById("email").value;
+    const location = document.getElementById("location").value;
+    
+    const newConnection = {
+      email: email,
+      location: location,
+      timestamp: new Date().toISOString()
+    };
+    
+    try {
+      const existing = JSON.parse(localStorage.getItem("connections") || "[]");
+      existing.push(newConnection);
+      localStorage.setItem("connections", JSON.stringify(existing));
+    } catch (err) {
+      console.error("Failed to store connection in localStorage:", err);
+    }
     
     // Animate and show the success message
     successOverlay.classList.add("show");
