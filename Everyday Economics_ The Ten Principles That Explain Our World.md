@@ -1,6 +1,6 @@
 # **Everyday Economics: The Ten Principles That Explain Our World**
 
-![Everyday Economics Cover](boat.jpg)
+![Everyday Economics Cover](boat_2.jpg)
 
 *Created: June 9, 2026*
 
