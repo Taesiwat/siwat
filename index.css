@@ -587,6 +587,24 @@ section {
   align-self: flex-start;
 }
 
+.blog-cover {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.blog-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.blog-card:hover .blog-cover img {
+  transform: scale(1.05);
+}
+
 /* Article Reader Modal */
 .modal-overlay {
   position: fixed;
@@ -672,6 +690,21 @@ section {
   background: var(--accent-gradient);
   width: 60px;
   margin-bottom: 2rem;
+}
+
+.modal-cover {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-color);
+}
+
+.modal-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .modal-text {

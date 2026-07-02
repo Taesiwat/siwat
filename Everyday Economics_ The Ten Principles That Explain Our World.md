@@ -1,5 +1,7 @@
 # **Everyday Economics: The Ten Principles That Explain Our World**
 
+![Everyday Economics Cover](boat.jpg)
+
 *Created: June 9, 2026*
 
 If you walk into a supermarket in any major city, you are standing in the middle of a beautiful, complex system. On the shelves, there are fresh apples from New Zealand, rich chocolate from Belgium, and fragrant rice from Thailand.
