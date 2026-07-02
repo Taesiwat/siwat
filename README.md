@@ -28,8 +28,7 @@ dataxbysiwat/
 ├── index.css         # Styling system (Variables, Animations, Responsive layouts)
 ├── script.js         # Interactive components (Chart.js dashboard, simulator logic, Matrix rain)
 ├── README.md         # Project documentation (this file)
-├── st_logo.png       # Header branding logo asset
-└── boat_2.jpg        # Cover image for the Everyday Economics article
+└── st_logo.png       # Header branding logo asset
 ```
 
 ---
